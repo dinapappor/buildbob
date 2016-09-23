@@ -1,0 +1,23 @@
+kerl:
+   git_erlang: OTP-19.1
+pkg
+  - gmake
+  - git
+  - package_2 
+  - package_3
+
+cache: 
+  dir/relative/to/project/base/dir
+env:
+  MIX_ENV: prod/staging
+run: 
+  - mix clean
+  - mix do deps.get, compile 
+  - mix release --prod
+
+artifact:
+ - 
+source:
+ - git: giturl.net/repo/yeah.git
+ - branch: my_branch
+ - tag: v2.20
